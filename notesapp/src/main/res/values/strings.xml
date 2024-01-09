@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">NotesApp</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="create_your_first_note">Create your first note!</string>
+    <string name="title">Title</string>
+    <string name="type_something">Type something...</string>
+    <string name="random_text">Non consequuntur corrupti et voluptas neque et asperiores accusamus et tempore sapiente. Sit unde possimus At voluptas assumenda 33 voluptatem beatae ea velit voluptatem sed eveniet voluptatem eos distinctio exercitationem. Aut nostrum consequuntur id voluptatum optio eum enim sequi est tenetur quibusdam ea molestiae rerum ut aperiam cumque 33 reprehenderit eveniet. Qui culpa animi nam sequi dolorum vel quidem autem qui unde vitae qui veniam facere est aliquid animi.</string>
+    <string name="Save">save</string>
+    <string name="done">Done</string>
+    <string name="note_images_recycler_view">note_images_recycler_view</string>
+</resources>

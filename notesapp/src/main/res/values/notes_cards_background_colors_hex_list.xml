@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="notes_cards_background_color_hex_codes">
+        <item>#FD99FF</item>
+        <item>#FF9E9E</item>
+        <item>#91F48F</item>
+        <item>#FFF599</item>
+        <item>#B69CFF</item>
+    </string-array>
+</resources>

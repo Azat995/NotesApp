@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/create_note_bottom_sheet_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:elevation="2dp"
+    android:fillViewport="true"
+    app:layout_behavior="@string/bottom_sheet_behavior"
+    tools:background="@drawable/bg_create_note_bottom_sheet">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/ib_done"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="15dp"
+            android:background="@drawable/bg_photo_note_list_item"
+            android:backgroundTint="#878787"
+            android:enabled="false"
+            android:foreground="@drawable/bg_photo_note_list_item"
+            android:foregroundTint="@color/foreground_color_done_image_btn"
+            android:text="@string/done"
+            android:textColor="#BAEEEEEE"
+            app:autoSizeMaxTextSize="16sp"
+            app:autoSizeTextType="uniform"
+            app:layout_constraintDimensionRatio="2:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.2" />
+
+        <ImageButton
+            android:id="@+id/ib_choose_photo"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="10dp"
+            android:background="@android:color/transparent"
+            android:padding="3dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_choose_image_file"
+            app:autoSizeMaxTextSize="24sp"
+            app:autoSizeTextType="uniform"
+            app:layout_constraintBottom_toBottomOf="@+id/ib_done"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@+id/ib_camera"
+            app:layout_constraintTop_toTopOf="@+id/ib_done"
+            app:layout_constraintVertical_bias="0.9"
+            app:tint="#878787" />
+
+        <ImageButton
+            android:id="@+id/ib_camera"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="10dp"
+            android:background="@android:color/transparent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_camera"
+            app:autoSizeMaxTextSize="24sp"
+            app:autoSizeTextType="uniform"
+            app:layout_constraintBottom_toBottomOf="@+id/ib_done"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@+id/ib_done"
+            app:layout_constraintTop_toTopOf="@+id/ib_done"
+            app:layout_constraintVertical_bias="0.9"
+            app:tint="#878787" />
+
+
+        <EditText
+            android:id="@+id/et_note_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@android:color/transparent"
+            android:focusable="true"
+            android:fontFamily="@font/corporative_sans_rd_regular"
+            android:hint="@string/title"
+            android:inputType="text"
+            android:maxLength="15"
+            android:maxLines="2"
+            android:textColor="#CFCECE"
+            android:textColorHint="@color/dark_text_on_dark_bg"
+            android:textSize="50sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ib_done"
+            app:layout_constraintWidth_percent="0.9" />
+
+        <EditText
+            android:id="@+id/et_note_content"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@android:color/transparent"
+            android:fontFamily="@font/corporative_sans_rd_regular"
+            android:gravity="start"
+            android:hint="@string/type_something"
+            android:textColor="@color/dark_text_on_dark_bg"
+            android:textColorHint="@color/dark_text_on_dark_bg"
+            android:textSize="28sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/et_note_title"
+            app:layout_constraintVertical_bias="0.0"
+            app:layout_constraintWidth_percent="0.9" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_note_photos"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="20dp"
+            android:clipToPadding="false"
+            android:nestedScrollingEnabled="false"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintDimensionRatio="2:1"
+            app:layout_constraintTop_toBottomOf="@+id/et_note_content"
+            tools:itemCount="6"
+            tools:listitem="@layout/notes_image_recyclerview_item"
+            tools:paddingStart="15dp" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="300dp"
+            android:layout_height="200dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_note_content" />
+        <!--            android:layout_width="0dp"-->
+        <!--            android:layout_height="0dp"-->
+        <!--            android:background="@android:color/transparent"-->
+        <!--            android:scaleType="centerCrop"-->
+        <!--            android:src="@drawable/ic_choose_image_file"-->
+        <!--            android:text="@string/Save"-->
+        <!--            app:autoSizeMaxTextSize="24sp"-->
+        <!--            app:autoSizeTextType="uniform"-->
+        <!--            app:layout_constraintBottom_toBottomOf="@+id/btn_save"-->
+        <!--            app:layout_constraintDimensionRatio="1:1"-->
+        <!--            app:layout_constraintEnd_toStartOf="@+id/btn_save"-->
+        <!--            app:layout_constraintHorizontal_bias="0.1"-->
+        <!--            app:layout_constraintStart_toStartOf="parent"-->
+        <!--            app:layout_constraintTop_toTopOf="@id/btn_save"-->
+        <!--            app:layout_constraintVertical_bias="0.9"-->
+        <!--            app:tint="#878787" />-->
+
+        <!--        <androidx.appcompat.widget.AppCompatButton-->
+        <!--            android:id="@+id/btn_save"-->
+        <!--            android:layout_width="0dp"-->
+        <!--            android:layout_height="0dp"-->
+        <!--            android:layout_marginEnd="15dp"-->
+        <!--            android:background="@drawable/bg_photo_note_list_item"-->
+        <!--            android:backgroundTint="#878787"-->
+        <!--            android:text="@string/Save"-->
+        <!--            android:textColor="#BAEEEEEE"-->
+        <!--            app:autoSizeMaxTextSize="24sp"-->
+        <!--            app:autoSizeTextType="uniform"-->
+        <!--            app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--            app:layout_constraintDimensionRatio="2:1"-->
+        <!--            app:layout_constraintEnd_toEndOf="parent"-->
+        <!--            app:layout_constraintTop_toBottomOf="@+id/rv_note_photos"-->
+        <!--            app:layout_constraintVertical_bias="0.9"-->
+        <!--            app:layout_constraintWidth_percent="0.3" />-->
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>
